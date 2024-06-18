@@ -1,0 +1,20 @@
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_delete_symbol[ - - ] - AssertionError: assert '' == ' '
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_delete_symbol[skypro-S-kypro] - AssertionError: assert 'skypro' == 'kypro'
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_starts_with[Skypro-s-True] - assert False == True
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_starts_with[ --False] - assert True == False
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_end_with[skyprO-o-True] - assert False == True
+
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_delete_symbol[ - - ] - AssertionError: assert '' == ' '
+Пробел не считает за символ.
+
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_delete_symbol[skypro-S-kypro] - AssertionError: assert 'skypro' == 'kypro'
+Символ S не считает за символ s. Он считает, что если буква большая, то проверку уже не проходит.
+
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_starts_with[Skypro-s-True] - assert False == True
+Страка начинается с сивола 's', но программа считает, что 'S' это не его символ.
+
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_starts_with[ --False] - assert True == False
+Пробел не считает за символ.
+
+FAILED Lesson_4/Lesson_4_task/test_string_utils.py::test_end_with[skyprO-o-True] - assert False == True
+Символ 'O', не считает за символ 'o'.
