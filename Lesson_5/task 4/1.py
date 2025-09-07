@@ -1,0 +1,50 @@
+# Задание 4. Клик по кнопке без ID
+
+# Напишите скрипт.
+# Шаги:
+
+# Откройте страницу http://uitestingplayground.com/dynamicid.
+# Кликните на синюю кнопку.
+# Запустите скрипт 3 раза подряд. Убедитесь, что он отработает одинаково.
+
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+# Запустите скрипт 3 раза подряд. Убедитесь, что он отработает одинаково.
+for attempt in range(3):
+    print(f"\n=== Попытка #{attempt + 1} ===")
+    
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver.maximize_window()
+    
+    try:
+        # Откройте страницу http://uitestingplayground.com/dynamicid.
+
+        driver.get("http://uitestingplayground.com/dynamicid")
+        
+        # Кликните на синюю кнопку.
+        button_locator = "button.btn-primary"
+        button_click = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, button_click))
+        )
+        
+        ActionChains(driver) \
+            .click(button_click) \
+            .perform()
+        
+        print("Клик отработал")
+        sleep(1)
+        
+    except:
+        print("Ошибка")
+    
+    finally:
+        driver.quit()
+        sleep(1)
