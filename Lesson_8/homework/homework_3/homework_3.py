@@ -1,0 +1,37 @@
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from pages.MainPage import MainPage
+from pages.SecondPage import SecondPage
+from pages.CartPage import CartPage
+from pages.ResultPage import ResultPage
+
+
+def test_form_validation():
+
+    chrome_options = Options() 
+    chrome_options.add_argument("--incognito")
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=chrome_options)
+    main_page = MainPage(driver)
+    main_page.authorization("standard_user","secret_sauce")
+
+    second_page = SecondPage(driver)
+    second_page.buy()
+    second_page.cart()
+
+    cart_page = CartPage(driver)
+    cart_page.checkout()
+    cart_page.input_form("Mys","Mis","444111")
+    cart_page.click_continue()
+
+    result_page = ResultPage(driver)
+    result_page.result_total()
+    
+    driver.quit()
