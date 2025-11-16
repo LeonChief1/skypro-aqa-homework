@@ -13,8 +13,10 @@ class ResultPage:
 
         Total = self._driver.find_element(By.CSS_SELECTOR, ".summary_total_label").text
 
-        # Проверьте, что итоговая сумма равна $58.29.
+        return Total
+
+        # # Проверьте, что итоговая сумма равна $58.29.
         
-        assert Total == "Total: $58.29", f"Ожидалась сумма $58.29, но получена {Total}"
+        # assert Total == "Total: $58.29", f"Ожидалась сумма $58.29, но получена {Total}"
         
-        print(f"Тест пройден! Итоговая сумма: {Total}")
+        # print(f"Тест пройден! Итоговая сумма: {Total}")
