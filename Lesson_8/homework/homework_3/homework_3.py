@@ -32,6 +32,11 @@ def test_form_validation():
     cart_page.click_continue()
 
     result_page = ResultPage(driver)
-    result_page.result_total()
+    total_value = result_page.result_total()
+    # Проверьте, что итоговая сумма равна $58.29.
+        
+    assert total_value == "Total: $58.29", f"Ожидалась сумма $58.29, но получена {total_value}"
+        
+    print(f"Тест пройден! Итоговая сумма: {total_value}")
     
     driver.quit()
