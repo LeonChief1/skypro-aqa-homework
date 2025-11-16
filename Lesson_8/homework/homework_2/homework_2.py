@@ -19,6 +19,7 @@ def test_form_validation():
     main_page.click_button()
 
     result_page = ResultPage(driver)
-    result_page.result_answer("15")
+    result_element = result_page.result_answer("15")
+    assert result_element == "15", f"Получен результат {result_element}"
 
     driver.quit()
