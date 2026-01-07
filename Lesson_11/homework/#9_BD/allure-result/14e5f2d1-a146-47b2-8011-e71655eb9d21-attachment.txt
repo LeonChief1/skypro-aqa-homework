@@ -1,0 +1,1 @@
+b'select MAX("id") from employee where is_active is True'

@@ -1,0 +1,1 @@
+b'insert into employee ("first_name", "last_name", "middle_name", "company_id", "email", "phone", "birthdate", "is_active") values (\'\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbd\', \'\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbd\xd0\xbe\xd0\xb2\', \'\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xb8\xd1\x87\', 1, \'user@example.com\', \'+78005553535\', \'2025-01-01\', true)'
